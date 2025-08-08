@@ -111,27 +111,46 @@
       transform: rotate(45deg);
       animation: floatUp 6s infinite ease-in;
     }
-
+    .heart-red {
+      background: #ff4b6e;
+    }
+    .heart-purple {
+      background: #b66aff;
+    }
+    .heart-yellow {
+      background: #ffd966;
+    }
+    .heart-blue {
+      background: #56caff;
+    }
+    .heart-big {
+      width: 36px;
+      height: 36px;
+    }
+    .heart-small {
+      width: 14px;
+      height: 14px;
+    }
+    .heart-outline {
+      box-shadow: 0 0 8px 3px rgba(255,255,255,0.6);
+    }
     .heart::before,
     .heart::after {
       content: "";
-      width: 22px;
-      height: 22px;
-      background: pink;
+      width: inherit;
+      height: inherit;
+      background: inherit;
       position: absolute;
       border-radius: 50%;
     }
-
     .heart::before {
-      top: -11px;
+      top: -50%;
       left: 0;
     }
-
     .heart::after {
-      left: -11px;
+      left: -50%;
       top: 0;
     }
-
     @keyframes floatUp {
       0% { transform: translateY(100vh) scale(0.5) rotate(45deg); opacity: 0; }
       100% { transform: translateY(-10vh) scale(1.5) rotate(45deg); opacity: 1; }
@@ -149,7 +168,6 @@
       I promise to love you deeper with every sunrise and cherish you endlessly until the stars forget to shine.
     </p>
     <div class="quote">“You are my today, my tomorrow, and my forever.”</div>
-
     <div class="photo-strip">
       <img src="2.jpeg" alt="couple1">
       <img src="3.jpeg" alt="couple2">
@@ -158,18 +176,32 @@
       <img src="6.jpeg" alt="couple4">
     </div>
   </div>
-
   <div class="hearts">
     <script>
+      const heartTypes = [
+        '',
+        'heart-red',
+        'heart-purple',
+        'heart-yellow',
+        'heart-blue',
+        'heart-big',
+        'heart-small',
+        'heart-outline'
+      ];
       for (let i = 0; i < 50; i++) {
         const heart = document.createElement("div");
         heart.classList.add("heart");
+        // Randomly choose 1-2 extra classes
+        const extra = heartTypes
+          .sort(() => 0.5 - Math.random())
+          .slice(0, Math.floor(Math.random() * 2) + 1);
+        extra.forEach(cls => heart.classList.add(cls));
         heart.style.left = Math.random() * 100 + "vw";
         heart.style.animationDuration = (Math.random() * 5 + 3) + "s";
         heart.style.opacity = Math.random();
         document.querySelector(".hearts").appendChild(heart);
       }
-    </script>
+    <\/script>
   </div>
     
 </body>
