@@ -78,6 +78,40 @@
       box-shadow: 0 8px 20px rgba(255, 105, 180, 0.8);
     }
 
+    /* Music Control Button Styles */
+    .music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 182, 193, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .music-control:hover {
+      transform: scale(1.1);
+      background: rgba(255, 182, 193, 0.9);
+    }
+
+    .music-control::before {
+      content: "♪";
+      font-size: 24px;
+      color: white;
+    }
+
+    .music-control.playing::before {
+      content: "⏸";
+    }
+
     @keyframes fadeInDown {
       0% { opacity: 0; transform: translateY(-30px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -148,7 +182,7 @@
       This month has been a melody of your laughter, the warmth of your embrace, and the sparkle in your eyes.<br>
       I promise to love you deeper with every sunrise and cherish you endlessly until the stars forget to shine.
     </p>
-    <div class="quote">“You are my today, my tomorrow, and my forever.”</div>
+    <div class="quote">"You are my today, my tomorrow, and my forever."</div>
 
     <div class="photo-strip">
       <img src="2.jpeg" alt="couple1">
@@ -158,6 +192,8 @@
       <img src="6.jpeg" alt="couple4">
     </div>
   </div>
+
+  <button class="music-control" id="musicControl"></button>
 
   <div class="hearts">
     <script>
@@ -169,12 +205,48 @@
         heart.style.opacity = Math.random();
         document.querySelector(".hearts").appendChild(heart);
       }
-    </script>
+    <\/script>
   </div>
-  <audio src="song1 (mp3cut.net).mp3" autoplay loop hidden></audio>
+
+  <audio id="bgMusic" src="song1 (mp3cut.net).mp3" preload="auto" loop></audio>
+
+  <script>
+    const audio = document.getElementById('bgMusic');
+    const musicControl = document.getElementById('musicControl');
+    let isPlaying = false;
+
+    function togglePlay() {
+      if (isPlaying) {
+        audio.pause();
+        musicControl.classList.remove('playing');
+      } else {
+        audio.play().catch(function(error) {
+          console.log("Audio play failed:", error);
+        });
+        musicControl.classList.add('playing');
+      }
+      isPlaying = !isPlaying;
+    }
+
+    musicControl.addEventListener('click', togglePlay);
+
+    // Try to play audio on first interaction
+    document.addEventListener('click', function() {
+      if (!isPlaying) {
+        togglePlay();
+      }
+    }, { once: true });
+
+    // Try to autoplay when page loads
+    window.addEventListener('load', function() {
+      audio.play().catch(function(error) {
+        console.log("Autoplay failed:", error);
+      });
+    });
+  <\/script>
 </body>
 <footer>
     With love always,  
     <strong>RaviKumar 💘 Anju</strong>
-  </footer>
+</footer>
 </html>
