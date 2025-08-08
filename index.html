@@ -1,174 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Monthiversary 💖</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Dancing Script', cursive;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      text-align: center;
-    }
-
-    .overlay {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-size: 4.5rem;
-      margin-bottom: 10px;
-      animation: fadeInDown 2s ease-in-out;
-      color: #ffdde1;
-      text-shadow: 2px 2px 8px rgba(255, 105, 180, 0.6);
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      animation: fadeInUp 2s ease-in-out;
-      color: #ffe4ec;
-    }
-
-    p {
-      font-size: 1.5rem;
-      max-width: 900px;
-      line-height: 2.2;
-      animation: fadeIn 3s ease-in-out;
-      font-style: italic;
-      color: #fff0f5;
-    }
-
-    .quote {
-      margin-top: 30px;
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #ffb6c1;
-      animation: fadeIn 4s ease-in-out;
-    }
-
-    .photo-strip {
-      margin-top: 50px;
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .photo-strip img {
-      width: 230px;
-      height: auto;
-      border-radius: 20px;
-      border: 3px solid rgba(255, 192, 203, 0.5);
-      box-shadow: 0 6px 18px rgba(255, 182, 193, 0.7);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .photo-strip img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.8);
-    }
-
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .heart {
-      width: 22px;
-      height: 22px;
-      background: pink;
-      position: absolute;
-      transform: rotate(45deg);
-      animation: floatUp 6s infinite ease-in;
-    }
-
-    .heart::before,
-    .heart::after {
-      content: "";
-      width: 22px;
-      height: 22px;
-      background: pink;
-      position: absolute;
-      border-radius: 50%;
-    }
-
-    .heart::before {
-      top: -11px;
-      left: 0;
-    }
-
-    .heart::after {
-      left: -11px;
-      top: 0;
-    }
-
-    @keyframes floatUp {
-      0% { transform: translateY(100vh) scale(0.5) rotate(45deg); opacity: 0; }
-      100% { transform: translateY(-10vh) scale(1.5) rotate(45deg); opacity: 1; }
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title</title>
+    <style>
+        body {
+            background-image: url('1.jpeg');
+        }
+    </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>Happy Monthiversary 💖</h1>
-    <h2>RaviKumar 💞 Hrudajanali</h2>
-    <p>
-      My love, you are my dream come true, the poem my heart never stops writing.<br>
-      This month has been a melody of your laughter, the warmth of your embrace, and the sparkle in your eyes.<br>
-      I promise to love you deeper with every sunrise and cherish you endlessly until the stars forget to shine.
-    </p>
-    <div class="quote">“You are my today, my tomorrow, and my forever.”</div>
+    <!-- Other content -->
 
     <div class="photo-strip">
-      <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df" alt="couple1">
-      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="couple2">
-      <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659" alt="couple3">
-      <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64" alt="couple4">
+        <img src="2.jpeg" alt="couple1"> 
+        <img src="3.jpeg" alt="couple2"> 
+        <img src="4.jpeg" alt="couple3"> 
+        <img src="5.jpeg" alt="couple4"> 
+        <img src="6.jpeg" alt="couple5">
     </div>
-  </div>
 
-  <div class="hearts">
-    <script>
-      for (let i = 0; i < 50; i++) {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (Math.random() * 5 + 3) + "s";
-        heart.style.opacity = Math.random();
-        document.querySelector(".hearts").appendChild(heart);
-      }
-    </script>
-  </div>
+    <!-- Other content -->
 </body>
 </html>
