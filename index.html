@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Third Monthiversary 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -12,6 +13,7 @@
       background-size: cover;
       color: white;
       text-align: center;
+      overflow-x: hidden;
     }
 
     .overlay {
@@ -22,6 +24,8 @@
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
+      z-index: 1;
+      position: relative;
     }
 
     h1 {
@@ -78,7 +82,7 @@
       box-shadow: 0 8px 20px rgba(255, 105, 180, 0.8);
     }
 
-    /* Music Control Button Styles */
+    /* Music Control Button */
     .music-control {
       position: fixed;
       bottom: 20px;
@@ -94,7 +98,7 @@
       justify-content: center;
       box-shadow: 0 4px 12px rgba(255, 105, 180, 0.4);
       transition: all 0.3s ease;
-      z-index: 1000;
+      z-index: 10;
     }
 
     .music-control:hover {
@@ -135,6 +139,7 @@
       height: 100%;
       pointer-events: none;
       z-index: 0;
+      overflow: hidden;
     }
 
     .heart {
@@ -167,13 +172,29 @@
     }
 
     @keyframes floatUp {
-      0% { transform: translateY(100vh) scale(0.5) rotate(45deg); opacity: 0; }
-      100% { transform: translateY(-10vh) scale(1.5) rotate(45deg); opacity: 1; }
+      0% {
+        transform: translateY(100vh) scale(0.5) rotate(45deg);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5) rotate(45deg);
+        opacity: 1;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #ffe4ec;
+      font-size: 1.2rem;
+      z-index: 1;
+      position: relative;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="hearts"></div>
+
   <div class="overlay">
     <h1>Happy Third Monthiversary 💖</h1>
     <h2>Kanna 💞 Bujji</h2>
@@ -189,28 +210,26 @@
       <img src="3.jpeg" alt="couple2">
       <img src="4.jpeg" alt="couple3">
       <img src="5.jpeg" alt="couple4">
-      <img src="6.jpeg" alt="couple4">
+      <img src="6.jpeg" alt="couple5">
     </div>
   </div>
 
   <button class="music-control" id="musicControl"></button>
-
-  <div class="hearts">
-    <script>
-      for (let i = 0; i < 50; i++) {
-        const heart = document.createElement("div");
-        heart.classList.add("heart");
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (Math.random() * 5 + 3) + "s";
-        heart.style.opacity = Math.random();
-        document.querySelector(".hearts").appendChild(heart);
-      }
-    <\/script>
-  </div>
-
   <audio id="bgMusic" src="song1 (mp3cut.net).mp3" preload="auto" loop></audio>
 
   <script>
+    // Floating Hearts Generation
+    const heartsContainer = document.querySelector('.hearts');
+    for (let i = 0; i < 50; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 5 + 3) + "s";
+      heart.style.opacity = Math.random();
+      heartsContainer.appendChild(heart);
+    }
+
+    // Music Control
     const audio = document.getElementById('bgMusic');
     const musicControl = document.getElementById('musicControl');
     let isPlaying = false;
@@ -230,23 +249,23 @@
 
     musicControl.addEventListener('click', togglePlay);
 
-    // Try to play audio on first interaction
-    document.addEventListener('click', function() {
-      if (!isPlaying) {
-        togglePlay();
-      }
-    }, { once: true });
-
-    // Try to autoplay when page loads
-    window.addEventListener('load', function() {
-      audio.play().catch(function(error) {
-        console.log("Autoplay failed:", error);
+    // Try to autoplay on page load
+    window.addEventListener('load', () => {
+      audio.play().then(() => {
+        isPlaying = true;
+        musicControl.classList.add('playing');
+      }).catch(() => {
+        // Autoplay may fail due to browser policy; wait for interaction
+        document.addEventListener('click', function handler() {
+          togglePlay();
+          document.removeEventListener('click', handler);
+        });
       });
     });
-  <\/script>
+  </script>
+
+  <footer>
+    With love always, <strong>RaviKumar 💘 Anju</strong>
+  </footer>
 </body>
-<footer>
-    With love always,  
-    <strong>RaviKumar 💘 Anju</strong>
-</footer>
 </html>
