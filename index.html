@@ -1,156 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Wedding Monthiversary 💖</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Monthiversary 💖</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f8d7e5 0%, #fff8f8 100%);
-      min-height: 100vh;
-      color: #3c134f;
-      position: relative;
-      overflow-x: hidden;
+      font-family: 'Dancing Script', cursive;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
     }
+
+    .overlay {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 4.5rem;
+      margin-bottom: 10px;
+      animation: fadeInDown 2s ease-in-out;
+      color: #ffdde1;
+      text-shadow: 2px 2px 8px rgba(255, 105, 180, 0.6);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 2s ease-in-out;
+      color: #ffe4ec;
+    }
+
+    p {
+      font-size: 1.5rem;
+      max-width: 900px;
+      line-height: 2.2;
+      animation: fadeIn 3s ease-in-out;
+      font-style: italic;
+      color: #fff0f5;
+    }
+
+    .quote {
+      margin-top: 30px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #ffb6c1;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    .photo-strip {
+      margin-top: 50px;
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .photo-strip img {
+      width: 230px;
+      height: auto;
+      border-radius: 20px;
+      border: 3px solid rgba(255, 192, 203, 0.5);
+      box-shadow: 0 6px 18px rgba(255, 182, 193, 0.7);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .photo-strip img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.8);
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     .hearts {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
     }
+
     .heart {
+      width: 22px;
+      height: 22px;
+      background: pink;
       position: absolute;
-      color: #ff69b4;
-      font-size: 2em;
-      animation: floatHearts 8s infinite linear;
-      opacity: 0.8;
+      transform: rotate(45deg);
+      animation: floatUp 6s infinite ease-in;
     }
-    @keyframes floatHearts {
-      0% { transform: translateY(100vh) scale(1); opacity: 0; }
-      10% { opacity: 1; }
-      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 22px;
+      height: 22px;
+      background: pink;
+      position: absolute;
+      border-radius: 50%;
     }
-    header {
-      text-align: center;
-      padding: 100px 20px 30px 20px;
-      font-family: 'Sacramento', cursive;
-      font-size: 3em;
-      color: #ff69b4;
-      text-shadow: 0 0 20px #fff0f6;
-      position: relative;
-      z-index: 1;
+
+    .heart::before {
+      top: -11px;
+      left: 0;
     }
-    .subtitle {
-      font-size: 1.5em;
-      color: #8a2387;
-      margin-bottom: 40px;
-      font-family: 'Poppins', sans-serif;
+
+    .heart::after {
+      left: -11px;
+      top: 0;
     }
-    section {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 30px;
-      background: rgba(255,255,255,0.7);
-      border-radius: 20px;
-      box-shadow: 0 0 15px #ffb6c1;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 40px;
-    }
-    .carousel {
-      display: flex;
-      gap: 15px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      justify-content: center;
-      margin-bottom: 30px;
-    }
-    .carousel img {
-      width: 220px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 2px 12px #ff69b4;
-      scroll-snap-align: center;
-      transition: transform 0.3s ease;
-    }
-    .carousel img:hover {
-      transform: scale(1.05);
-    }
-    .love-note {
-      font-size: 1.2em;
-      line-height: 1.7;
-      color: #512e5f;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .proposal {
-      font-family: 'Sacramento', cursive;
-      font-size: 2.5em;
-      color: #ff69b4;
-      animation: glow 2s infinite alternate;
-      text-align: center;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 12px #ff69b4; }
-      to { text-shadow: 0 0 25px #ff69b4, 0 0 35px #ff1493; }
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 1em;
-      color: #a78ab7;
-      background: rgba(255,255,255,0.5);
-      border-top: 1px solid #ff69b4;
-      z-index: 1;
-      position: relative;
-    }
-    @media (max-width: 600px) {
-      header { font-size: 2em; }
-      .carousel img { width: 70vw; height: 200px; }
-      section { padding: 15px; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5) rotate(45deg); opacity: 0; }
+      100% { transform: translateY(-10vh) scale(1.5) rotate(45deg); opacity: 1; }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="hearts"></div>
-  <header>
-    Happy Wedding Monthiversary!
-    <div class="subtitle">Celebrating Love, Laughter, and Forever 💍</div>
-  </header>
-  <section>
-    <div class="carousel">
-      <img src="photo1.jpg" alt="Our Memory 1">
-      <img src="photo2.jpg" alt="Our Memory 2">
-      <img src="photo3.jpg" alt="Our Memory 3">
+  <div class="overlay">
+    <h1>Happy Monthiversary 💖</h1>
+    <h2>RaviKumar 💞 Hrudajanali</h2>
+    <p>
+      My love, you are my dream come true, the poem my heart never stops writing.<br>
+      This month has been a melody of your laughter, the warmth of your embrace, and the sparkle in your eyes.<br>
+      I promise to love you deeper with every sunrise and cherish you endlessly until the stars forget to shine.
+    </p>
+    <div class="quote">“You are my today, my tomorrow, and my forever.”</div>
+
+    <div class="photo-strip">
+      <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df" alt="couple1">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="couple2">
+      <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659" alt="couple3">
+      <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64" alt="couple4">
     </div>
-    <div class="love-note">
-      Every moment with you is a treasured memory, every day a new adventure. 
-      Our wedding monthiversary reminds me how lucky I am to walk through life hand-in-hand with you. 
-      Thank you for being my partner, my best friend, and the love of my life. I love you more with each passing day! 💞
-    </div>
-    <div class="proposal">
-      Here's to many more months and years together! <br>
-      Forever yours 💖
-    </div>
-  </section>
-  <footer>
-    With all my love, <b>Your Valentine</b>
-  </footer>
-  <script>
-    // Floating hearts animation
-    const heartSymbols = ["💖","💘","💝","💕","💞","💗"];
-    for (let i = 0; i < 30; i++) {
-      const el = document.createElement("div");
-      el.className = "heart";
-      el.style.left = Math.random() * 100 + "vw";
-      el.style.top = Math.random() * 100 + "vh";
-      el.style.animationDuration = (5 + Math.random() * 5) + "s";
-      el.style.fontSize = (20 + Math.random() * 20) + "px";
-      el.innerText = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
-      document.querySelector(".hearts").appendChild(el);
-    }
-  </script>
+  </div>
+
+  <div class="hearts">
+    <script>
+      for (let i = 0; i < 50; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 5 + 3) + "s";
+        heart.style.opacity = Math.random();
+        document.querySelector(".hearts").appendChild(heart);
+      }
+    </script>
+  </div>
 </body>
 </html>
