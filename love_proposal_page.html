@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Proposal - RaviKumar & Hrudajanali</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff0f5;
+      color: #4b2e2e;
+      overflow-x: hidden;
+    }
+    header {
+      background: url('WhatsApp%20Image%202025-07-20%20at%2019.14.47.jpeg') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      z-index: 1;
+    }
+    header h2 {
+      font-size: 1.5em;
+      margin-top: 10px;
+      z-index: 1;
+    }
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .hearts span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+      animation: float 10s infinite ease-in-out;
+      opacity: 0.6;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transition: transform 0.4s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .love-note {
+      font-size: 1.3em;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+      font-style: italic;
+    }
+    .proposal {
+      font-size: 2em;
+      margin-top: 20px;
+      animation: pulse 2s infinite;
+      color: #d63384;
+      font-weight: bold;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    footer {
+      padding: 30px;
+      background-color: #ffe6f0;
+      font-size: 0.9em;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hearts">
+      <span style="left: 10%; animation-delay: 0s;"></span>
+      <span style="left: 25%; animation-delay: 2s;"></span>
+      <span style="left: 40%; animation-delay: 4s;"></span>
+      <span style="left: 60%; animation-delay: 1s;"></span>
+      <span style="left: 75%; animation-delay: 3s;"></span>
+      <span style="left: 90%; animation-delay: 5s;"></span>
+    </div>
+    <h1>RaviKumar ❤️ Hrudajanali</h1>
+    <h2>Happy Third Monthiversary Bujji Bangaram</h2>
+  </header>
+
+  <section>
+    <h2>Our Beautiful Moments</h2>
+    <div class="gallery">
+      <img src="WhatsApp%20Image%202025-07-20%20at%2019.00.53.jpeg" alt="Memory 1">
+      <img src="WhatsApp%20Image%202025-07-20%20at%2019.00.52.jpeg" alt="Memory 2">
+      <img src="WhatsApp%20Image%202025-07-20%20at%2019.00.50%20(1).jpeg" alt="Memory 3">
+      <img src="WhatsApp%20Image%202025-07-20%20at%2019.00.50.jpeg" alt="Memory 4">
+      <img src="WhatsApp%20Image%202025-07-20%20at%2018.59.42.jpeg" alt="Memory 5">
+    </div>
+  </section>
+
+  <section>
+    <div class="love-note">
+      From holding hands to sharing dreams, every moment with you is a treasure. 
+      You bring light into my life in ways I never imagined possible. 
+      I am deeply grateful to walk this journey with you. I love you more with every heartbeat.
+    </div>
+    <div class="proposal">Will you marry me, Hrudajanali? 💍</div>
+  </section>
+
+  <footer>
+    Made with ❤️ by RaviKumar for his one and only Hrudajanali
+  </footer>
+
+</body>
+</html>

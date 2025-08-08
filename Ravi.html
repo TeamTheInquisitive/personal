@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RaviKumar 💖 Hrudajanali</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(ellipse at bottom, #1a0033 0%, #0d001a 100%);
+      overflow-x: hidden;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    /* Floating Heart Background */
+    .heart {
+      position: fixed;
+      color: pink;
+      font-size: 20px;
+      animation: float 10s infinite ease-in;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+      }
+      20% { opacity: 1; }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    header {
+      height: 100vh;
+      background: url('your-hero-image.jpg') no-repeat center/cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 0;
+    }
+
+    header h1 {
+      font-family: 'Sacramento', cursive;
+      font-size: 4em;
+      color: #ffc0cb;
+      z-index: 1;
+      animation: fadeInDown 2s ease;
+      text-shadow: 0 0 15px #ffb6c1;
+    }
+
+    .subtitle {
+      font-size: 1.4em;
+      color: #ffaad4;
+      z-index: 1;
+      animation: fadeInUp 2.5s ease;
+      margin-top: 15px;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      z-index: 2;
+      position: relative;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
+      justify-content: center;
+    }
+
+    .carousel img {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(255,192,203,0.3);
+      scroll-snap-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel img:hover {
+      transform: scale(1.05);
+    }
+
+    .love-note {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.2em;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 182, 193, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      backdrop-filter: blur(8px);
+      animation: fadeInUp 2s ease;
+    }
+
+    .proposal {
+      margin-top: 40px;
+      font-family: 'Sacramento', cursive;
+      font-size: 3em;
+      color: #ffb6c1;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff69b4; }
+      to { text-shadow: 0 0 25px #ff69b4, 0 0 35px #ff1493; }
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    @media(max-width: 600px) {
+      header h1 { font-size: 2.5em; }
+      .subtitle { font-size: 1em; }
+      .carousel img { width: 85vw; height: 350px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Animated Hearts -->
+  <script>
+    const symbols = ["💖","💘","💫","💝","🌸","💍"];
+    for (let i = 0; i < 40; i++) {
+      const el = document.createElement("div");
+      el.className = "heart";
+      el.style.left = Math.random() * 100 + "vw";
+      el.style.top = Math.random() * 100 + "vh";
+      el.style.animationDuration = (5 + Math.random() * 5) + "s";
+      el.style.fontSize = (15 + Math.random() * 20) + "px";
+      el.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+      document.body.appendChild(el);
+    }
+  </script>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>RaviKumar 💖 Hrudajanali</h1>
+    <div class="subtitle">Happy Third Monthiversary Bujji Bangaram</div>
+  </header>
+
+  <!-- Photo Memories -->
+  <section>
+    <h2 style="font-size: 2em; margin-bottom: 30px;">Our Magical Moments</h2>
+    <div class="carousel">
+      <img src="photo1.jpg" alt="Moment 1">
+      <img src="photo2.jpg" alt="Moment 2">
+      <img src="photo3.jpg" alt="Moment 3">
+      <img src="photo4.jpg" alt="Moment 4">
+    </div>
+  </section>
+
+  <!-- Love Note -->
+  <section>
+    <div class="love-note">
+      From the very first day, you’ve been my peace, my spark, and my reason to smile.  
+      Hrudajanali, you’ve painted my life with colors I never knew existed.  
+      Every moment with you is a fairytale I never want to end.  
+      Thank you for being the most beautiful part of my world. 💞
+    </div>
+    <div class="proposal">Will you marry me? 💍</div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    With love always,  
+    <strong>RaviKumar 💘</strong>
+  </footer>
+
+</body>
+</html>
