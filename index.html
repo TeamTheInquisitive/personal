@@ -109,7 +109,7 @@
       background: pink;
       position: absolute;
       transform: rotate(45deg);
-      animation: floatUp 6s infinite ease-in;
+      animation: pump 0.9s infinite alternate, floatUp 6s infinite ease-in;
     }
     .heart-red {
       background: #ff4b6e;
@@ -152,8 +152,12 @@
       top: 0;
     }
     @keyframes floatUp {
-      0% { transform: translateY(100vh) scale(0.5) rotate(45deg); opacity: 0; }
-      100% { transform: translateY(-10vh) scale(1.5) rotate(45deg); opacity: 1; }
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 1; }
+    }
+    @keyframes pump {
+      0%, 100% { transform: scale(1) rotate(45deg); }
+      50% { transform: scale(1.3) rotate(45deg); }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
